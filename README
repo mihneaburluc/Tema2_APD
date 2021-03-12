@@ -1,0 +1,31 @@
+La tema am folosit pachetul intersections pentru a-mi crea asa zisele intersectii, pe care
+le-am denumit task-uri. In aceste taskuri am membrii (semafoare, bariere, variabile, etc)
+diferiti in functie de fiecare cerinta in parte. In ReaderHandler citesc variabilele de pe
+ultima linie si construiesc un nou task cu varibilele necesare acestuia in IntersectionFactory.
+Pentru fiecare task (exceptie 1 si 7), in IntersectionHandler obtin intersectia aferenta task-ului
+si dupa incep modificarile.
+
+La taskul 1 nu am ce explicatii sa dau, pur si simplu se fac afisarile si exista acel waiting time
+intre ele.
+
+La taskul 2 exista un semafor de n in task 2 care imi permite maxim n masini in intersectie.
+
+La taskul 3 exista un vector de semafoare a cate o masina fiecare pentru fiecare directie de mers.
+
+La taskul 4 se face exact acelasi lucru ca la taskul 3, doar ca semafoarele permit x masini si dupa semafor avem o bariera pentru a ne asigura ca intra toate odata in intersectie.
+
+La taskul 5 este exact la fel ca la taskul 2, diferenta fiind ca in loc de un semafor, am cate un
+semafor de n masini pentru fiecare directie.
+
+La taskul 6 folosim variabila inIntersection din main care ne arata cate masini cu prioritate sunt
+in intersectie la un moment dat. O masina fara prioritate poate patrunde doar daca varibila este 0.
+
+La taskul 7 cat timp threadul cu pietoni nu s-a terminat, daca ei traverseaza semaforul e rosu, daca nu, e verde. msgRed si msgGreen tin evidenta ultimului mesaj afisat.
+
+La taskul 8 avem 2 semafoare, unul va permite x masini, celalalt 0. Un sens de mers va face aquire
+si la final, cand se vor intalni toate cele x masini la bariera, vor face release la semaforul din sensul celalalt si tot asa. 
+
+La taskul 9 o banda veche este o coada de id-uri de masini, iar o banda noua este o coada de perechi formate dintr-o banda veche si numarul benzii, adica o coada si un int. Mai intai ajung toate masinile la drumul in lucru si se adauga in cozile benzilor asignate lor. Apoi un singur thread va modela benzile noi. Se impart benzile vechi cu formulele din lab1 si cat timp o banda noua mai are benzi vechi in coada se scot masini dintr-o banda veche cat timp si ea mai are masini in coada sau, daca s-a terminat numarul maxim de masini care poate trece, se merge catre banda urmatoare si tot asa pana cand toate benzile noi raman niste cozi goale.
+
+La taskul 10 folosesc 2 cozi pentru fiecare sens de mers. Cand o masina jaunge la calea ferata aceasta este adaugata in coada de pe sensul sau si asteapta la bariera. Dupa ce se ridica bariera 
+fiecare thread scoate din coada cate o masina si ii afiseaza id-ul (coada este de id-uri, nu de masini).
