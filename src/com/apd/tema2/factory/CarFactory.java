@@ -6,6 +6,7 @@ import com.apd.tema2.entities.Car;
  * Clasa Factory ce ajuta la crearea Thread-urilor de tip Car.
  */
 public class CarFactory {
+    //comentariu de test
 
     public static Car getCar(String handlerType, String[] args) {
         switch(args.length) {
